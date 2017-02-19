@@ -1,0 +1,26 @@
+#include<stdio.h>
+typedef struct 
+{ 
+    float real ;
+    float imag ;
+} Complex ;
+
+Complex addition (Complex a[], int n)
+{
+    Complex res = {0,0} ;
+    for (int i = 0 ; i < n ; i++)
+    {
+        res.real += a[i].real ;
+        res.imag += a[i].imag ;
+    }
+        return res ;
+}
+ 
+int main ()
+{
+    int n = 5 ;
+    Complex a[5] = {{3,4},{1,5},{1,2},{3,7},{2,9}} ;
+    Complex r4 = addition(a,n);
+    printf("Result: %f + i %f \n" , r4.real,r4.imag);
+    return 0 ;
+}
