@@ -20,7 +20,7 @@ struct complex add( struct complex a, struct complex b)
      scanf("%f", &r.imaginary);
      return r;
  }
-struct complex showcomplex(struct complex a)
+void complex showcomplex(struct complex a)
 {
     printf("the real part is %f \n", a.real);
     printf("the imaginary part is %f \n",a.imaginary);
