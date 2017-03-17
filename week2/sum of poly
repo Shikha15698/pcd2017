@@ -1,0 +1,33 @@
+#include <stdio.h>
+int readpoly( int n, int a[])
+{
+	printf("enter coeff");
+	for( int i=0; i<=n; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	return 0;
+}
+int compute( int n, int a[], int x)
+{
+	int sum = 0;
+	for(int i=n; i>0; i--)
+	{
+		sum = (sum + a[i])*x;
+	}
+	sum = sum + a[0];
+	return sum;
+}
+int main()
+{
+	int n, sum=0;
+	printf(" enter power");
+	scanf("%d", &n);
+	int a[n], x;
+	printf("enter x");
+	scanf("%d", &x);
+	readpoly( n, a);
+	sum = compute(n, a, x);
+	printf("sum = %d", sum);
+	return 0;
+}
