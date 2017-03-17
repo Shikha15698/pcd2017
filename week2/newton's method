@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+float findroot ( float num )
+{
+	if( num<=0)
+	{
+		if (num == 0)
+		{
+			printf("root of 0 is 0");
+		}
+		else 
+		{
+			printf("number is negative");
+		}
+	}
+	else
+	{
+		float x1= num, x= num/2;
+		float diff= 0.0001;
+		int i=0;
+		while (i<25)
+		{
+			x1 = x - ((x*x) - num)/ (2*x);
+			if(fabs(x-x1)<diff)
+			{
+				break;
+			}
+			else
+			{
+				i++;
+				x=x1;
+			}
+		}
+	return x;
+	}
+}
+int main()
+{
+	float x, sqroot;
+	printf("enter number");
+	scanf("%f", &x);
+	sqroot = findroot(x);
+	printf("the root is %f", sqroot);
+	return 0;
+}
